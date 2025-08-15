@@ -43,11 +43,14 @@ interface ScopeHierarchy {
 }
 
 const SCOPE_HIERARCHY: ScopeHierarchy = {
-  'Mail.ReadWrite': ['Mail.Read'],
+  'Mail.ReadWrite': ['Mail.Read', 'Mail.Send'],
   'Calendars.ReadWrite': ['Calendars.Read'],
-  'Files.ReadWrite': ['Files.Read'],
+  'Files.ReadWrite.All': ['Files.Read', 'Files.ReadWrite'],
   'Tasks.ReadWrite': ['Tasks.Read'],
   'Contacts.ReadWrite': ['Contacts.Read'],
+  'Notes.ReadWrite.All': ['Notes.Read', 'Notes.Create'],
+  'Sites.ReadWrite.All': ['Sites.Read.All'],
+  'Chat.ReadWrite': ['Chat.Read', 'ChatMessage.Read', 'ChatMessage.Send'],
 };
 
 function buildScopesFromEndpoints(includeWorkAccountScopes: boolean = false): string[] {

@@ -3,25 +3,25 @@
     "pathPattern": "/me/messages",
     "method": "get",
     "toolName": "list-mail-messages",
-    "scopes": ["Mail.Read"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/me/mailFolders",
     "method": "get",
     "toolName": "list-mail-folders",
-    "scopes": ["Mail.Read"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/me/mailFolders/{mailFolder-id}/messages",
     "method": "get",
     "toolName": "list-mail-folder-messages",
-    "scopes": ["Mail.Read"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/me/messages/{message-id}",
     "method": "get",
     "toolName": "get-mail-message",
-    "scopes": ["Mail.Read"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/me/sendMail",
@@ -33,31 +33,31 @@
     "pathPattern": "/users/{user-id}/messages",
     "method": "get",
     "toolName": "list-shared-mailbox-messages",
-    "workScopes": ["Mail.Read.Shared"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/users/{user-id}/mailFolders/{mailFolder-id}/messages",
     "method": "get",
     "toolName": "list-shared-mailbox-folder-messages",
-    "workScopes": ["Mail.Read.Shared"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/users/{user-id}/messages/{message-id}",
     "method": "get",
     "toolName": "get-shared-mailbox-message",
-    "workScopes": ["Mail.Read.Shared"]
+    "scopes": ["Mail.ReadWrite"]
   },
   {
     "pathPattern": "/users/{user-id}/sendMail",
     "method": "post",
     "toolName": "send-shared-mailbox-mail",
-    "workScopes": ["Mail.Send.Shared"]
+    "scopes": ["Mail.Send"]
   },
   {
     "pathPattern": "/users",
     "method": "get",
     "toolName": "list-users",
-    "workScopes": ["User.Read.All"]
+    "scopes": ["User.Read"]
   },
   {
     "pathPattern": "/me/messages",
@@ -81,13 +81,13 @@
     "pathPattern": "/me/events",
     "method": "get",
     "toolName": "list-calendar-events",
-    "scopes": ["Calendars.Read"]
+    "scopes": ["Calendars.ReadWrite"]
   },
   {
     "pathPattern": "/me/events/{event-id}",
     "method": "get",
     "toolName": "get-calendar-event",
-    "scopes": ["Calendars.Read"]
+    "scopes": ["Calendars.ReadWrite"]
   },
   {
     "pathPattern": "/me/events",
@@ -111,120 +111,120 @@
     "pathPattern": "/me/calendarView",
     "method": "get",
     "toolName": "get-calendar-view",
-    "scopes": ["Calendars.Read"]
+    "scopes": ["Calendars.ReadWrite"]
   },
   {
     "pathPattern": "/me/calendars",
     "method": "get",
     "toolName": "list-calendars",
-    "scopes": ["Calendars.Read"]
+    "scopes": ["Calendars.ReadWrite"]
   },
   {
     "pathPattern": "/me/drives",
     "method": "get",
     "toolName": "list-drives",
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/root",
     "method": "get",
     "toolName": "get-drive-root-item",
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/root",
     "method": "get",
     "toolName": "get-root-folder",
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/children",
     "method": "get",
     "toolName": "list-folder-files",
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/children/{driveItem-id1}/content",
     "method": "get",
     "toolName": "download-onedrive-file-content",
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}",
     "method": "delete",
     "toolName": "delete-onedrive-file",
-    "scopes": ["Files.ReadWrite"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/content",
     "method": "put",
     "toolName": "upload-file-content",
-    "scopes": ["Files.ReadWrite"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/add",
     "method": "post",
     "toolName": "create-excel-chart",
     "isExcelOp": true,
-    "scopes": ["Files.ReadWrite"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/format",
     "method": "patch",
     "toolName": "format-excel-range",
     "isExcelOp": true,
-    "scopes": ["Files.ReadWrite"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/sort",
     "method": "patch",
     "toolName": "sort-excel-range",
     "isExcelOp": true,
-    "scopes": ["Files.ReadWrite"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range(address='{address}')",
     "method": "get",
     "toolName": "get-excel-range",
     "isExcelOp": true,
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/drives/{drive-id}/items/{driveItem-id}/workbook/worksheets",
     "method": "get",
     "toolName": "list-excel-worksheets",
     "isExcelOp": true,
-    "scopes": ["Files.Read"]
+    "scopes": ["Files.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/onenote/notebooks",
     "method": "get",
     "toolName": "list-onenote-notebooks",
-    "scopes": ["Notes.Read"]
+    "scopes": ["Notes.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/onenote/notebooks/{notebook-id}/sections",
     "method": "get",
     "toolName": "list-onenote-notebook-sections",
-    "scopes": ["Notes.Read"]
+    "scopes": ["Notes.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/onenote/sections/{onenoteSection-id}/pages",
     "method": "get",
     "toolName": "list-onenote-section-pages",
-    "scopes": ["Notes.Read"]
+    "scopes": ["Notes.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/onenote/pages/{onenotePage-id}/content",
     "method": "get",
     "toolName": "get-onenote-page-content",
-    "scopes": ["Notes.Read"]
+    "scopes": ["Notes.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/onenote/pages",
     "method": "post",
     "toolName": "create-onenote-page",
-    "scopes": ["Notes.Create"]
+    "scopes": ["Notes.ReadWrite.All"]
   },
   {
     "pathPattern": "/me/todo/lists",
@@ -308,13 +308,13 @@
     "pathPattern": "/me/contacts",
     "method": "get",
     "toolName": "list-outlook-contacts",
-    "scopes": ["Contacts.Read"]
+    "scopes": ["Contacts.ReadWrite"]
   },
   {
     "pathPattern": "/me/contacts/{contact-id}",
     "method": "get",
     "toolName": "get-outlook-contact",
-    "scopes": ["Contacts.Read"]
+    "scopes": ["Contacts.ReadWrite"]
   },
   {
     "pathPattern": "/me/contacts",
@@ -344,169 +344,168 @@
     "pathPattern": "/me/chats",
     "method": "get",
     "toolName": "list-chats",
-    "workScopes": ["Chat.Read"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/chats/{chat-id}",
     "method": "get",
     "toolName": "get-chat",
-    "workScopes": ["Chat.Read"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/chats/{chat-id}/messages",
     "method": "get",
     "toolName": "list-chat-messages",
-    "workScopes": ["ChatMessage.Read"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/chats/{chat-id}/messages/{chatMessage-id}",
     "method": "get",
     "toolName": "get-chat-message",
-    "workScopes": ["ChatMessage.Read"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/chats/{chat-id}/messages",
     "method": "post",
     "toolName": "send-chat-message",
-    "workScopes": ["ChatMessage.Send"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/me/joinedTeams",
     "method": "get",
     "toolName": "list-joined-teams",
-    "workScopes": ["Team.ReadBasic.All"]
+    "scopes": ["Team.ReadBasic.All"]
   },
   {
     "pathPattern": "/teams/{team-id}",
     "method": "get",
     "toolName": "get-team",
-    "workScopes": ["Team.ReadBasic.All"]
+    "scopes": ["Team.ReadBasic.All"]
   },
   {
     "pathPattern": "/teams/{team-id}/channels",
     "method": "get",
     "toolName": "list-team-channels",
-    "workScopes": ["Channel.ReadBasic.All"]
+    "scopes": ["Channel.ReadBasic.All"]
   },
   {
     "pathPattern": "/teams/{team-id}/channels/{channel-id}",
     "method": "get",
     "toolName": "get-team-channel",
-    "workScopes": ["Channel.ReadBasic.All"]
+    "scopes": ["Channel.ReadBasic.All"]
   },
   {
     "pathPattern": "/teams/{team-id}/channels/{channel-id}/messages",
     "method": "get",
     "toolName": "list-channel-messages",
-    "workScopes": ["ChannelMessage.Read.All"]
+    "scopes": ["ChannelMessage.Edit"]
   },
   {
     "pathPattern": "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}",
     "method": "get",
     "toolName": "get-channel-message",
-    "workScopes": ["ChannelMessage.Read.All"]
+    "scopes": ["ChannelMessage.Edit"]
   },
   {
     "pathPattern": "/teams/{team-id}/channels/{channel-id}/messages",
     "method": "post",
     "toolName": "send-channel-message",
-    "workScopes": ["ChannelMessage.Send"]
+    "scopes": ["ChannelMessage.Edit"]
   },
   {
     "pathPattern": "/teams/{team-id}/members",
     "method": "get",
     "toolName": "list-team-members",
-    "workScopes": ["TeamMember.Read.All"]
+    "scopes": ["Team.ReadBasic.All"]
   },
   {
     "pathPattern": "/chats/{chat-id}/messages/{chatMessage-id}/replies",
     "method": "get",
     "toolName": "list-chat-message-replies",
-    "workScopes": ["ChatMessage.Read"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/chats/{chat-id}/messages/{chatMessage-id}/replies",
     "method": "post",
     "toolName": "reply-to-chat-message",
-    "workScopes": ["ChatMessage.Send"]
+    "scopes": ["Chat.ReadWrite"]
   },
   {
     "pathPattern": "/sites",
     "method": "get",
     "toolName": "search-sharepoint-sites",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}",
     "method": "get",
     "toolName": "get-sharepoint-site",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/drives",
     "method": "get",
     "toolName": "list-sharepoint-site-drives",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/drives/{drive-id}",
     "method": "get",
     "toolName": "get-sharepoint-site-drive-by-id",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/items",
     "method": "get",
     "toolName": "list-sharepoint-site-items",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/items/{baseItem-id}",
     "method": "get",
     "toolName": "get-sharepoint-site-item",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/lists",
     "method": "get",
     "toolName": "list-sharepoint-site-lists",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/lists/{list-id}",
     "method": "get",
     "toolName": "get-sharepoint-site-list",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/lists/{list-id}/items",
     "method": "get",
     "toolName": "list-sharepoint-site-list-items",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/lists/{list-id}/items/{listItem-id}",
     "method": "get",
     "toolName": "get-sharepoint-site-list-item",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/{site-id}/getByPath(path='{path}')",
     "method": "get",
     "toolName": "get-sharepoint-site-by-path",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/sites/delta()",
     "method": "get",
     "toolName": "get-sharepoint-sites-delta",
-    "workScopes": ["Sites.Read.All"]
+    "scopes": ["Sites.ReadWrite.All"]
   },
   {
     "pathPattern": "/search/query",
     "method": "post",
     "toolName": "search-query",
-    "scopes": ["Mail.Read", "Calendars.Read", "Files.Read.All", "People.Read"],
-    "workScopes": ["Sites.Read.All", "Chat.Read", "ChannelMessage.Read.All"]
+    "scopes": ["Mail.ReadWrite", "Calendars.ReadWrite", "Files.ReadWrite.All", "Sites.ReadWrite.All", "Chat.ReadWrite"]
   }
 ]

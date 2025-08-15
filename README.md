@@ -1,6 +1,6 @@
 # ms-365-mcp-server
 
-[![npm version](https://img.shields.io/npm/v/@softeria/ms-365-mcp-server.svg)](https://www.npmjs.com/package/@softeria/ms-365-mcp-server) [![build status](https://github.com/softeria/ms-365-mcp-server/actions/workflows/build.yml/badge.svg)](https://github.com/softeria/ms-365-mcp-server/actions/workflows/build.yml) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/softeria/ms-365-mcp-server/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@michasmi-365-mcp-server.svg)](https://www.npmjs.com/package/@michasmi-365-mcp-server) [![build status](https://github.com/softeria/ms-365-mcp-server/actions/workflows/build.yml/badge.svg)](https://github.com/softeria/ms-365-mcp-server/actions/workflows/build.yml) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/softeria/ms-365-mcp-server/blob/main/LICENSE)
 
 Microsoft 365 MCP Server
 
@@ -87,7 +87,7 @@ To access work/school features (Teams, SharePoint, etc.), enable organization mo
   "mcpServers": {
     "ms365": {
       "command": "npx",
-      "args": ["-y", "@softeria/ms-365-mcp-server", "--org-mode"]
+      "args": ["-y", "@michasmi-365-mcp-server", "--org-mode"]
     }
   }
 }
@@ -133,7 +133,7 @@ Edit the config file under Settings > Developer:
   "mcpServers": {
     "ms365": {
       "command": "npx",
-      "args": ["-y", "@softeria/ms-365-mcp-server"]
+      "args": ["-y", "@michasmi-365-mcp-server"]
     }
   }
 }
@@ -142,7 +142,7 @@ Edit the config file under Settings > Developer:
 ### Claude Code CLI
 
 ```bash
-claude mcp add ms365 -- npx -y @softeria/ms-365-mcp-server
+claude mcp add ms365 -- npx -y @michasmi-365-mcp-server
 ```
 
 For other interfaces that support MCPs, please refer to their respective documentation for the correct
@@ -188,7 +188,7 @@ For interactive authentication via device code:
   - Use `verify-login` tool to confirm
 - **CLI login**:
   ```bash
-  npx @softeria/ms-365-mcp-server --login
+  npx @michasmi-365-mcp-server --login
   ```
   Follow the URL and code prompt in the terminal.
 
@@ -199,7 +199,7 @@ Tokens are cached securely in your OS credential store (fallback to file).
 When running with `--http`, the server **requires** OAuth authentication:
 
 ```bash
-npx @softeria/ms-365-mcp-server --http 3000
+npx @michasmi-365-mcp-server --http 3000
 ```
 
 This mode:
@@ -251,7 +251,7 @@ If you are running ms-365-mcp-server as part of a larger system that manages Mic
 provide an access token directly to this MCP server:
 
 ```bash
-MS365_MCP_OAUTH_TOKEN=your_oauth_token npx @softeria/ms-365-mcp-server
+MS365_MCP_OAUTH_TOKEN=your_oauth_token npx @michasmi-365-mcp-server
 ```
 
 This method:

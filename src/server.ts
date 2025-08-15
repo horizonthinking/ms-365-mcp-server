@@ -126,7 +126,7 @@ class MicrosoftGraphServer {
           grant_types_supported: ['authorization_code', 'refresh_token'],
           token_endpoint_auth_methods_supported: ['none'],
           code_challenge_methods_supported: ['S256'],
-          scopes_supported: ['User.Read', 'Files.Read', 'Mail.Read'],
+          scopes_supported: ['User.Read', 'Files.ReadWrite.All', 'Mail.ReadWrite', 'Mail.Send', 'Calendars.ReadWrite', 'Contacts.ReadWrite', 'Notes.ReadWrite.All', 'Tasks.ReadWrite', 'Sites.ReadWrite.All', 'Chat.ReadWrite', 'Team.ReadBasic.All', 'Channel.ReadBasic.All', 'ChannelMessage.Edit'],
         });
       });
 
@@ -136,7 +136,7 @@ class MicrosoftGraphServer {
         res.json({
           resource: `${url.origin}/mcp`,
           authorization_servers: [url.origin],
-          scopes_supported: ['User.Read', 'Files.Read', 'Mail.Read'],
+          scopes_supported: ['User.Read', 'Files.ReadWrite.All', 'Mail.ReadWrite', 'Mail.Send', 'Calendars.ReadWrite', 'Contacts.ReadWrite', 'Notes.ReadWrite.All', 'Tasks.ReadWrite', 'Sites.ReadWrite.All', 'Chat.ReadWrite', 'Team.ReadBasic.All', 'Channel.ReadBasic.All', 'ChannelMessage.Edit'],
           bearer_methods_supported: ['header'],
           resource_documentation: `${url.origin}`,
         });
@@ -208,7 +208,7 @@ class MicrosoftGraphServer {
 
         // Ensure we have the minimal required scopes if none provided
         if (!microsoftAuthUrl.searchParams.get('scope')) {
-          microsoftAuthUrl.searchParams.set('scope', 'User.Read Files.Read Mail.Read');
+          microsoftAuthUrl.searchParams.set('scope', 'User.Read Files.ReadWrite.All Mail.ReadWrite');
         }
 
         // Redirect to Microsoft's authorization page
